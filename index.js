@@ -78,7 +78,7 @@ async function get_prize(category, year) {
   const item = document.createElement("div");
   item.classList.add("item")
   const lar = get_laureates(data[0].laureates);
-  document.getElementById("more_content").innerHTML = `<div class="more_data" onclick="render()"> \
+  document.getElementById("more_content").innerHTML = `<div class="more_data"> \
                         <h2>${data[0].categoryFullName.en}</h2> \
                         <h3>${year}</h3> \
                         <hr> \
