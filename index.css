@@ -5,7 +5,22 @@
 /* These are provided here to give you a minimum starting point for a layout */
 
 #container {
+  padding: 1em;
+  
+  transition: filter 1s;
+}
+
+#container, body {
+  background: linear-gradient(170deg, rgba(102,9,121,1) 20%, rgba(96,0,255,1) 80%);
+  background-color: rgb(96,0,255);
+  background-repeat: no-repeat;
+  background-position: center -50vh; 
+  background-size: calc(100% + 100vw) 200vh;
+}
+
+#main {
   width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -13,58 +28,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 2em;
 }
 
 .item {
-  flex-grow: 0;
-  flex-basis: 100%;
+  flex-grow: 1;
+  flex-basis: 30%;
 
   box-sizing: border-box;
-  /* cursor: pointer; */
+  
+  min-width: 300px;
+  max-width: 800px;
 
   /* visual helper */
   /* border: 1px dotted pink; */
 }
 
-/* adjustments for medium screens, like some tablets or landscape on a mobile */
-@media (min-width: 576px) {
-  .item {
-    flex-basis: 50%;
-  }
-}
-
-/* adjustments for medium-large screens, like some tablets */
-@media (min-width: 768px) {
-  .item {
-    flex-basis: 50%;
-  }
-}
-
-/* adjustments for large screens, like laptops and desktops */
-@media (min-width: 992px) {
-  #container {
-    width: 992px;
-    margin: 0 auto;
-  }
-
-  .item {
-    flex-basis: 33.3333333333333%;
-  }
-}
-
 body {
-  background: none;
   color: #ececec;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-html {
-  background: rgb(102,9,121);
-  background: linear-gradient(156deg, rgba(102,9,121,1) 0%, rgba(96,0,255,1) 100%);
-  /* background-repeat: no-repeat; */
-  background-position: center; 
-  background-size: calc(100% + 100vw) calc(100% + 100vh);
-}
 
 h1 {
   display: flex;
@@ -94,6 +80,7 @@ h3 {
 .data ul {
   padding:0;
 }
+
 .data {
   flex-grow: 0;
   flex-basis: 100%;
@@ -102,15 +89,29 @@ h3 {
   color: rgb(24, 24, 24);
   display: block;
 
-  margin: 15px;
-  padding: 10px;
-  height: 250px;
+  padding: 1em 1em 2em 1em;
+  min-height: 250px;
   /* visual helper */
   /* border: 1px dotted blueviolet; */
   box-shadow: 0px 5px 10px;
   backdrop-filter: blur(10px);
   border-radius: 10px;
   transition: box-shadow 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+
+.more_data {
+  flex-grow: 0;
+  flex-basis: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: rgb(24, 24, 24);
+  display: block;
+
+  padding: 1em 1em 2em 1em;
+  min-height: 250px;
+  box-shadow: 0px 5px 10px;
+  border-radius: 10px;
 }
 
 .data:hover {
@@ -118,7 +119,125 @@ h3 {
   transform: translateY(-2px);
 }
 
-/* .data:active {
+#searchbox {
+  flex:1;
+}
+
+#limit {
+  width:5em;
+}
+
+.inputrer {
+  font-size:1em;
+   /* -webkit-appearance: none;
+   appearance: none; */
+   border-radius: 1em;
+   /* transition: all 0.2s; */
+}
+
+input.inputrer {
+  padding-left: 1em;
+}
+
+.data:active {
   box-shadow: 0px 0px 1px;
   transform: translateY(1px);
-} */
+}
+
+#arrow {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+#order_check {
+  display: none;
+}
+
+#data_man {
+  display: flex;
+  align-items: center;
+   margin: 15px 0 15px 0;
+   gap: 1em;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   
+}
+
+@media (max-width:700px) {
+  #data_man {
+     justify-content: center;
+  }
+  
+  #data_man > div {
+    flex-basis: 100%;
+  }
+}
+
+#order_check + label {
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+}
+
+#order_check:checked + label>#arrow {
+  transform: rotateZ(180deg);
+}
+
+button {
+  background: none;
+  border: solid 1px #ececec;
+  color: #ececec;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+button:hover {
+  background-color: #ececec22;
+}
+
+button:active {
+  background-color: #ececec44;
+}
+
+#year_picker, #cat_picker {
+  flex:1;
+}
+
+button.inputrer {
+  flex: 1;
+  min-width: fit-content;
+}
+
+#data_man > div {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
+}
+
+#more_data {
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ececec22;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100vh);
+  transition: transform 1s;
+  cursor: pointer;
+}
+
+#exit_data {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  width: 50px;
+}

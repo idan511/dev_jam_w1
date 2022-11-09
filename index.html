@@ -2,19 +2,50 @@
 
 <head>
   <meta charset=utf-8>
-  <title></title>
+  <title>Nobel Prizes!</title>
   <link rel="stylesheet" href="index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
   <div id="container">
     <div id="main">
-      <h1>Nobel Laureates</h1>
+      <h1>Nobel Prizes</h1>
+      <div id="data_man">
+        <!-- <input type="search" placeholder="Type to search" id="searchbox" oninput="search(this.value)" class="inputrer">  -->
+        <div id="filterer">
+          <label for="year">year (0 for all): </label>
+          <input type="number" class="inputrer" id="year_picker" value="0" step="1" min="0" max="2022" onchange="update_year(this.value)">
+          <label for="year">category: </label>
+          <!-- <input type="number" class="inputrer" id="year" value="2020" step="1" min="1901" max="2022">     -->
+          <select class="inputrer" id="cat_picker" onchange="update_category(this.value)">
+            <option>All</option>
+            <option>Chemistry</option>
+            <option>Economy</option>
+            <option>Litrature</option>
+            <option>Peace</option>
+            <option>Physics</option>
+            <option>Medicine</option>
+          </select>
+        </div>  
+        <div>
+          <input type="checkbox" id="order_check" onchange="change_order(this.checked)" ><label for="order_check">sort by year <span id="arrow">↑</span> </label>
+          <label for="limit">limit: </label>
+          <input type="number" class="inputrer" id="limit" value="100" onchange="update_limit(this.value)" step="10" min="0">
+        </div>   
+      </div>
+      
+
       <div id="app" class="row">
 
 
       </div>
     </div>
+  </div>
+
+  <div id="more_data">
+    <div class="item" id="more_content"></div>
+    <img id="exit_data" src="x.svg">
   </div>
   <script src="index.js"></script>
   <script>
