@@ -70,6 +70,7 @@ async function get_prize(category, year) {
   let url = `https://api.nobelprize.org/2.1/nobelPrize/${category}/${year}`
   console.log(url)
   document.getElementById("more_data").style.transform = "translateY(0)"
+  document.getElementById("more_content").innerHTML = ""
   let data = await getData(url);
 
   const item = document.createElement("div");
