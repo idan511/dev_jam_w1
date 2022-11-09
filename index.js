@@ -69,8 +69,8 @@ async function render() {
 async function get_prize(category, year) {
   let url = `https://api.nobelprize.org/2.1/nobelPrize/${category}/${year}`
   console.log(url)
+  document.getElementById("more_data").style.transform = "translateY(0)"
   let data = await getData(url);
-  console.log(data)
 
   const item = document.createElement("div");
   item.classList.add("item")
@@ -84,8 +84,6 @@ async function get_prize(category, year) {
                         <h4>Prize amount</h4> \
                         ${data[0].prizeAmount}$ (${data[0].prizeAmountAdjusted}$ adjusted for inflation)
                       </div>`
-
-  document.getElementById("more_data").style.transform = "translateY(0)"
 
 }
 
