@@ -6,15 +6,15 @@
 
 #container {
   padding: 1em;
-  
   transition: filter 1s;
 }
 
-#container, body {
-  background: linear-gradient(170deg, rgba(102,9,121,1) 20%, rgba(96,0,255,1) 80%);
-  background-color: rgb(96,0,255);
+#container,
+body {
+  background: linear-gradient(170deg, rgba(102, 9, 121, 1) 20%, rgba(96, 0, 255, 1) 80%);
+  background-color: rgb(96, 0, 255);
   background-repeat: no-repeat;
-  background-position: center -50vh; 
+  background-position: center -50vh;
   background-size: calc(100% + 100vw) 200vh;
 }
 
@@ -36,7 +36,7 @@
   flex-basis: 30%;
 
   box-sizing: border-box;
-  
+
   min-width: 300px;
   max-width: 800px;
 
@@ -61,24 +61,26 @@ h1 {
 }
 
 h2 {
-  text-align:center;
+  text-align: center;
   margin: 0;
   margin: 0.5rem 0 0.5rem 0;
 }
 
 h3 {
-  text-align:center;
+  text-align: center;
   margin: 2px;
   color: grey;
   font-size: 1em;
 }
+
 .data li {
   font-size: 1.1em;
   list-style: none;
-  margin-bottom:0.5em;
+  margin-bottom: 0.5em;
 }
+
 .data ul {
-  padding:0;
+  padding: 0;
 }
 
 .data {
@@ -121,19 +123,16 @@ h3 {
 }
 
 #searchbox {
-  flex:1;
+  flex: 1;
 }
 
 #limit {
-  width:5em;
+  width: 5em;
 }
 
 .inputrer {
-  font-size:1em;
-   /* -webkit-appearance: none;
-   appearance: none; */
-   border-radius: 1em;
-   /* transition: all 0.2s; */
+  font-size: 1em;
+  border-radius: 1em;
 }
 
 input.inputrer {
@@ -157,30 +156,30 @@ input.inputrer {
 #data_man {
   display: flex;
   align-items: center;
-   margin: 15px 0 15px 0;
-   gap: 1em;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   
+  margin: 15px 0 15px 0;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 
 @media (max-width:700px) {
   #data_man {
-     justify-content: center;
+    justify-content: center;
   }
-  
-  #data_man > div {
+
+  #data_man>div {
     flex-basis: 100%;
   }
 }
 
-#order_check + label {
+#order_check+label {
   padding-left: 1em;
   padding-right: 1em;
   cursor: pointer;
 }
 
-#order_check:checked + label>#arrow {
+#order_check:checked+label>#arrow {
   transform: rotateZ(180deg);
 }
 
@@ -202,8 +201,9 @@ button:active {
   background-color: #ececec44;
 }
 
-#year_picker, #cat_picker {
-  flex:1;
+#year_picker,
+#cat_picker {
+  flex: 1;
 }
 
 button.inputrer {
@@ -211,7 +211,7 @@ button.inputrer {
   min-width: fit-content;
 }
 
-#data_man > div {
+#data_man>div {
   display: flex;
   gap: 1em;
   align-items: center;
@@ -220,9 +220,9 @@ button.inputrer {
 }
 
 #more_data {
-  position:fixed;
-  top:0;
-  left:0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: #ececec22;

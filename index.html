@@ -12,12 +12,12 @@
     <div id="main">
       <h1>Nobel Prizes</h1>
       <div id="data_man">
-        <!-- <input type="search" placeholder="Type to search" id="searchbox" oninput="search(this.value)" class="inputrer">  -->
         <div id="filterer">
           <label for="year">year (0 for all): </label>
-          <input type="number" class="inputrer" id="year_picker" value="0" step="1" min="0" max="2022" onchange="update_year(this.value)">
+          <input type="number" class="inputrer" id="year_picker" value="0" step="1" min="0" max="2022"
+            onchange="update_year(this.value)">
           <label for="year">category: </label>
-          <!-- <input type="number" class="inputrer" id="year" value="2020" step="1" min="1901" max="2022">     -->
+
           <select class="inputrer" id="cat_picker" onchange="update_category(this.value)">
             <option>All</option>
             <option>Chemistry</option>
@@ -27,14 +27,16 @@
             <option>Physics</option>
             <option>Medicine</option>
           </select>
-        </div>  
+        </div>
         <div>
-          <input type="checkbox" id="order_check" onchange="change_order(this.checked)" ><label for="order_check">sort by year <span id="arrow">↑</span> </label>
+          <input type="checkbox" id="order_check" onchange="change_order(this.checked)"><label for="order_check">sort by
+            year <span id="arrow">↑</span> </label>
           <label for="limit">limit: </label>
-          <input type="number" class="inputrer" id="limit" value="100" onchange="update_limit(this.value)" step="10" min="0">
-        </div>   
+          <input type="number" class="inputrer" id="limit" value="100" onchange="update_limit(this.value)" step="10"
+            min="0">
+        </div>
       </div>
-      
+
 
       <div id="app" class="row">
 
