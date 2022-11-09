@@ -91,7 +91,7 @@ async function get_prize(category, year) {
                         <h2>${data[0].categoryFullName.en}</h2> \
                         <h3>${year}</h3> \
                         <hr> \
-                        <h4>Winners</h4>
+                        <h4>Laureates</h4>
                         ${lar.outerHTML} \
                         <h4>Prize amount</h4> \
                         ${data[0].prizeAmount}$ (${data[0].prizeAmountAdjusted}$ adjusted for inflation)
