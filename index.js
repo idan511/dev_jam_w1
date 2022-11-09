@@ -42,9 +42,11 @@ async function render() {
     url += `&nobelPrizeCategory=${category}`
   }
   console.log(url)
+  document.getElementById("app").innerHTML = "<img src='spinner2.svg'>"
   let data = await getData(url);
-
   document.getElementById("app").innerHTML = ""
+
+  
   for (var l of data.nobelPrizes) {
     let year = l.awardYear
     let category = l.category.en
